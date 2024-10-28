@@ -3,7 +3,7 @@
 @import url("./reset.css");
 @import url("./querys.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css");
-@import url("");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap");
 
 /* End Import Section  */
 
@@ -18,8 +18,8 @@ color_secundario:
 /* Variables Root  */
 
 :root {
-  /* --fuente-principal: ;
-  --fuente-titulos: */
+  --fuente-principal: open-sans, sans-serif;
+  --fuente-secundaria: raleway, sans-serif;
   --colorprimario: #6b8e23;
   --colorsecundario: #f5f5dc;
   --margin: 0.625rem;
@@ -76,10 +76,12 @@ header {
   align-content: center;
 
   h1 {
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: calc(1.375rem + 1.5vw);
+    font-weight: 800;
+    line-height: 1.2;
     margin: var(--margin);
     color: var(--colorsecundario);
+    font-family: var(--fuente-secundaria);
   }
 
   #buscador {
@@ -249,22 +251,23 @@ header {
   }
 
   #cart {
-      width: 2.5rem;
-      height: 2.5rem;
-      background-color: var(--colorsecundario);
-      border: none;
-      border-radius: 50%;
-      text-align: center;
-      align-content: center;
-      box-shadow: 0.0625rem 0.0625rem 0.0625rem 0.0625rem;
-      position: absolute;
-      top: 1.25rem;
-      left: -3.125rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--colorsecundario);
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    align-content: center;
+    box-shadow: 0.0625rem 0.0625rem 0.0625rem 0.0625rem;
+    position: absolute;
+    top: 1.25rem;
+    left: -3.125rem;
 
-      &:hover, &.active {
-        transform: scale(110%);
-        box-shadow: 0 0 0.1875rem 0.3125rem cyan;
-      }
+    &:hover,
+    &.active {
+      transform: scale(110%);
+      box-shadow: 0 0 0.1875rem 0.3125rem cyan;
+    }
   }
 }
 
@@ -273,4 +276,25 @@ header {
 .escaparate button:disabled {
   background-color: lightgrey;
   color: red;
+}
+
+/*Estilos del Footer  */
+
+footer {
+  position: fixed;
+  background-color: var(--colorsecundario);
+  padding: 1rem 0 !important;
+  text-align: center;
+  color: forestgreen;
+  width: 100%;
+  bottom: 0;
+}
+
+footer a {
+  text-decoration: none;
+  color: forestgreen;
+}
+
+footer a:hover {
+  color: var(--colorprimario);
 }
