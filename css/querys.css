@@ -8,9 +8,59 @@
 /* TABLETS */
 
 @media (min-width: 768px) {
-}
+  /* Star Header */
 
-/* DESKTOPS */
+  .container {
+    max-width: 70% !important;
+    margin: 0 auto;
+  }
 
-@media (min-width: 1004px) {
+  div .escaparate {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+
+    article {
+      height: 100%;
+    }
+  }
+
+  /* End Header */
+  /* Carrito */
+
+  #buscador {
+    width: 25%;
+  }
+
+  /* DESKTOPS */
+
+  @media (min-width: 1004px) {
+    /* Star Header */
+    header nav .container {
+      justify-content: space-around;
+    }
+
+    header nav .container .hamburguesa {
+      display: none;
+    }
+
+    header nav .container ul.menu {
+      text-align: left;
+      width: auto;
+    }
+
+    header nav .container .menu li a {
+      padding: 0em 1.25em;
+      border-bottom: 0px;
+    }
+
+    header nav .container ul.menu li {
+      display: inline-block;
+    }
+
+    /* End Header */
+  }
 }
