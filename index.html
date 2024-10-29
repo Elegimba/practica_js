@@ -11,10 +11,49 @@
     <div class="wrapper">
       <!-- Start Header -->
       <header>
-        <h1>La Plantienda</h1>
-        <input type="text" id="buscador" placeholder="¿Qué estás buscando?" />
-        
+        <div class="nav__bar">
+          <div class="container__promo">
+            <div class="promo">
+              <p class="info"><b>ENVÍO GRATIS +49€ </b> A TODA LA PENÍNSULA</p>
+            </div>
+          </div>
+
+          <nav>
+            <div class="container">
+              <div class="logo__container">
+                <a href="#">
+                  <figure class="logo">
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9RK6gO7WYiinh5MbPYjD3ZIkjTr_GJ05CzA&s"
+                      alt="Logo de La Plantienda"
+                    />
+                  </figure>
+                </a>
+                <div>
+                  <h2><span>La Plantienda</span></h2>
+                </div>
+              </div>
+
+              <div class="menu__container">
+                <ul class="menu">
+                  <li><a class="activo" href="/">Inicio</a></li>
+                  <li><a href="#">Acerca de Nosotros</a></li>
+                  <li><a href="#">Catálogo</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <div class="search__bar">
+            <input
+              type="text"
+              id="buscador"
+              placeholder="¿Qué estás buscando?"
+            />
+          </div>
+        </div>
       </header>
+
       <!-- End Header -->
 
       <!-- Start Hero -->
@@ -72,7 +111,7 @@
         </div>
 
         <!-- Este sería el menú desplegable por la derecha de la pantalla, estará deshabilitado hasta que se presione en el icono del carrito y se desplazará hacia adentro junto con el icono -->
-        <div class="carro">
+        <div class="carro open">
           <aside>
             <h2>Mi Carrito</h2>
             <ul class="items">
@@ -98,7 +137,7 @@
               <button>Comprar</button>
             </div>
           </aside>
-                <button id="cart"><i class="fa-solid fa-cart-shopping"></i></button> 
+          <button id="cart"><i class="fa-solid fa-cart-shopping"></i></button>
         </div>
       </main>
       <!-- End Main -->
@@ -108,6 +147,7 @@
         <div class="container">
           <p>Copyright&copy;2022 - <a href="#">Aviso Legal</a></p>
         </div>
+      </footer>
       <!-- End Footer -->
     </div>
 
