@@ -7,14 +7,6 @@
 
 /* End Import Section  */
 
-/* Fuentes y Colores a utilizar
-
-font-family: ';
-font-family: '; 
-color_principal: 
-color_secundario: 
-*/
-
 /* Variables Root  */
 
 :root {
@@ -136,14 +128,6 @@ header nav .container .logo {
     padding: 3rem 0;
   }
 }
-/* }
-.logo {
-  width: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-} */
 
 header nav .container .hamburguesa {
   width: 1.875em;
@@ -224,8 +208,6 @@ header {
   article {
     margin: 1rem auto;
     padding: 1em;
-    /* width: 15.33rem; */
-    /* border-top: 0.1875rem solid var(--colorprimario); */
     border-left: 0.1875rem solid var(--colorsecundario);
     box-shadow: 0.0525rem 0.0525rem 0.3125rem 0.0325rem;
     border-radius: 0.625rem;
@@ -324,6 +306,7 @@ header {
   align-items: left;
   padding: 20px;
   transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
 
   /* width: 40%;
   height: 100vh;

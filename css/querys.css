@@ -28,6 +28,10 @@
     }
   }
 
+  div .carro {
+    width: 30% !important;
+  }
+
   /* End Header */
   /* Carrito */
 
