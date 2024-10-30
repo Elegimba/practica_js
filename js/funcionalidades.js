@@ -47,29 +47,27 @@ console.log(printAllStock(productList, productSection));
 
 // Captura del input de búsqueda
 const searchInput = document.querySelector('#buscador');
-
-// Función para filtrar y mostrar productos según el término de búsqueda
 function searchProducts(term, stockList, dom) {
-    // Filtra los productos que incluyen el término en el nombre o descripción
     const filteredProducts = stockList.filter(articulo => 
         articulo.nombre.toLowerCase().includes(term.toLowerCase()) || 
         articulo.descripcion.toLowerCase().includes(term.toLowerCase())
     );
 
-    // Limpia el DOM antes de pintar los productos filtrados
     dom.innerHTML = '';
-    // Llama a printAllStock con los productos filtrados
     printAllStock(filteredProducts, dom);
-}
 
-// Escucha el evento 'input' en el campo de búsqueda
+    btnAdd = document.querySelectorAll('article button');
+    btnAdd.forEach(button => {
+        button.addEventListener('click', addToCart);
+    });
+}
 searchInput.addEventListener('input', () => {
     const searchTerm = searchInput.value;
     searchProducts(searchTerm, productList, productSection);
 });
 
-// Llama a printAllStock para mostrar todos los productos al cargar la página
 printAllStock(productList, productSection);
+
 
 //End Search Input 
 
@@ -88,22 +86,15 @@ const itemsPerPage = 6; // Número de productos por página
 
 // Función para mostrar productos según la página actual
 function showPage(page, stockList) {
-    // Calcular el índice de inicio y fin para el slice
     const startIndex = (page - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-
-    // Filtrar la lista de productos y mostrar solo los de la página actual
     const productsToShow = stockList.slice(startIndex, endIndex);
-
-    // Limpiar el DOM antes de mostrar los productos
     productSection.innerHTML = '';
     printAllStock(productsToShow, productSection);
-
-    // Actualizar la información de la página
     pageInfo.textContent = `Página ${currentPage} de ${Math.ceil(stockList.length / itemsPerPage)}`;
 }
 
-// Función para manejar el clic en el botón "Anterior"
+// Botón "Anterior"
 function handlePrevClick() {
     if (currentPage > 1) {
         currentPage--;
@@ -111,7 +102,7 @@ function handlePrevClick() {
     }
 }
 
-// Función para manejar el clic en el botón "Siguiente"
+//Botón "Siguiente"
 function handleNextClick() {
     const totalPages = Math.ceil(productList.length / itemsPerPage);
     if (currentPage < totalPages) {
@@ -120,11 +111,11 @@ function handleNextClick() {
     }
 }
 
-// Escuchar eventos de clic en los botones
+//Eventos de clic en los botones
 prevButton.addEventListener('click', handlePrevClick);
 nextButton.addEventListener('click', handleNextClick);
 
-// Escuchar el evento de búsqueda
+// Evento de búsqueda
 searchInput.addEventListener('input', () => {
     const searchTerm = searchInput.value;
     const filteredProducts = productList.filter(articulo => 
@@ -152,16 +143,12 @@ const botonCarrito = document.querySelector('#cart')
 
 const desplegarCarro = () => {
     const carro = document.querySelector('.carro');
-
-    /* carro.style.transform = 'translateX(-100%)' */
-    /* carroBtn.setAttribute('style', 'transform: translateX(-800%)') */
     if (carro.style.transform === "translateX(100%)") {
         carro.setAttribute('style', 'transform: translateX(0)')
     } else {
         carro.style.transform = "translateX(100%)"
     }
 }
-
 botonCarrito.addEventListener('click', desplegarCarro)
 
 //Mostrar precio total
@@ -199,7 +186,7 @@ const addX1 = (span, stock, btn, btn1) => {
         btn.disabled = true;
         btn1.disabled = true;
         btn.textContent = 'Sin Stock'
-
+        
     }
     mostrarTotal()
 }
