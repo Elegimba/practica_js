@@ -134,10 +134,7 @@ header nav .container .hamburguesa {
   cursor: pointer;
 }
 
-header nav .container .hamburguesa > div {
-  border-top: 2px solid #aaa;
-  margin-bottom: 0.625em;
-}
+
 
 .menu__container {
   display: flex;
@@ -187,7 +184,7 @@ header {
     padding-bottom: 1rem;
     padding-right: 1.5rem;
     padding-left: 1.5rem;
-    width: 50%;
+    width: 400px;
     border-width: 3px;
     border-color: #ffb524 !important;
     font-family: var(--fuente-secundaria) !important;
@@ -197,15 +194,15 @@ header {
 /* Estilos del main */
 
 .escaparate {
-  /* width: 100%; */
+  
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+ 
   margin-top: 0.625rem;
-  justify-items: center;
-  /* height: auto; */
 
   article {
+    width: 250px;
+    height: 530px;
     margin: 1rem auto;
     padding: 1em;
     border-left: 0.1875rem solid var(--colorsecundario);
@@ -213,12 +210,13 @@ header {
     border-radius: 0.625rem;
     text-align: center;
     transition: 1s;
+    position: relative;
 
     &:hover {
       transform: scale(103%);
 
       img {
-        transition: 0.5s;
+        transition: 2.5s;
         transform: scale(105%) rotate(3deg);
         justify-content: center;
       }
@@ -249,9 +247,12 @@ header {
       line-height: 1.2rem;
       margin: 2.25rem auto;
 
-      :last-child {
+      &:last-child {
         font-weight: bold;
-        color: var(--colorprimario);
+        margin: 0;
+        position: absolute;
+        bottom: 80px;
+        left: 80px;
       }
     }
 
@@ -264,6 +265,10 @@ header {
       background-color: var(--colorsecundario);
       font-weight: 600;
       color: var(--colorprimario);
+      position: absolute;
+      bottom: 20px;
+      left: 50px;
+      
 
       &:hover {
         background-color: var(--colorprimario);
@@ -308,15 +313,6 @@ header {
   transition: transform 0.3s;
   transform: translateX(100%);
 
-  /* width: 40%;
-  height: 100vh;
-  position: fixed;
-  top: 50px;
-  right: -40%;
-  transition: 0.5s;
-  border-left: 0.1875rem solid var(--colorsecundario);
-  box-shadow: 0.0525rem 0.0525rem 0.3125rem 0.0325rem; */
-
   aside {
     margin-top: 6rem;
     padding: 0.625rem;
@@ -327,7 +323,6 @@ header {
     margin-bottom: 3.125rem;
     font-size: 1.8rem;
     font-weight: 700;
-    /* border-right: 0.125rem solid var(--colorprimario); */
     border-bottom: 0.125rem solid var(--colorprimario);
     border-radius: 50rem;
     padding: 1em;

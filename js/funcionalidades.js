@@ -41,7 +41,7 @@ function printOneArticle(articulo, dom) {
     img.alt = articulo.nombre;
     h3.textContent = articulo.nombre;
     ul.innerHTML = `<li>${articulo.descripcion}</li>
-                    <li>Precio: ${articulo.precio}</li>`;
+                    <li>Precio: ${articulo.precio} €</li>`;
     btn.textContent = "Agregar al carrito";
 
     btn.dataset.id = articulo.id

@@ -16,16 +16,11 @@
   }
 
   div .escaparate {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+
     gap: 1rem;
     justify-content: center;
     align-items: center;
 
-    article {
-      height: 100%;
-    }
   }
 
   div .carro {
@@ -35,9 +30,6 @@
   /* End Header */
   /* Carrito */
 
-  #buscador {
-    width: 25%;
-  }
 
   /* DESKTOPS */
 
