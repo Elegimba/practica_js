@@ -156,7 +156,7 @@ header nav .container .menu li a {
 }
 
 header nav .container .menu li:last-child a {
-  border: 0px;
+  border: 0;
 }
 
 header nav .container .menu li :is(a:hover, .activo) {
@@ -184,8 +184,8 @@ header {
     padding-bottom: 1rem;
     padding-right: 1.5rem;
     padding-left: 1.5rem;
-    width: 400px;
-    border-width: 3px;
+    width: 25rem;
+    border-width: 0.1875rem;
     border-color: #ffb524 !important;
     font-family: var(--fuente-secundaria) !important;
   }
@@ -201,8 +201,8 @@ header {
   margin-top: 0.625rem;
 
   article {
-    width: 250px;
-    height: 530px;
+    width: 15.625rem;
+    height: 33.125rem;
     margin: 1rem auto;
     padding: 1em;
     border-left: 0.1875rem solid var(--colorsecundario);
@@ -226,7 +226,7 @@ header {
       width: 9.375rem;
       height: 9.375rem;
       margin: 0 auto;
-      border: 2px solid #ffb524;
+      border: 0.125rem solid #ffb524;
       border-radius: 50%;
     }
 
@@ -238,7 +238,7 @@ header {
     }
 
     ul {
-      font-size: 17px;
+      font-size: 1.0625rem;
       margin: 2.25rem auto;
       font-weight: 400;
     }
@@ -251,13 +251,13 @@ header {
         font-weight: bold;
         margin: 0;
         position: absolute;
-        bottom: 80px;
-        left: 80px;
+        bottom: 5rem;
+        left: 5rem;
       }
     }
 
     button {
-      border: 1px solid #ffb524;
+      border: 0.0625rem solid #ffb524;
       margin-top: 1rem;
       width: 9.375rem;
       height: 2.875rem;
@@ -266,8 +266,8 @@ header {
       font-weight: 600;
       color: var(--colorprimario);
       position: absolute;
-      bottom: 20px;
-      left: 50px;
+      bottom: 1.25rem;
+      left: 3.125rem;
       
 
       &:hover {
@@ -309,7 +309,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: left;
-  padding: 20px;
+  padding: 1.25rem;
   transition: transform 0.3s;
   transform: translateX(100%);
 
@@ -384,7 +384,7 @@ header {
       display: block;
       background-color: var(--colorprimario);
       color: #fff;
-      border-radius: 40px !important;
+      border-radius: 2.5rem !important;
 
       &:hover {
         transform: scale(105%);
