@@ -3,6 +3,28 @@
 const productSection = document.querySelector('.escaparate');
 
 
+const addToCart = (event) => {
+    const carro = document.querySelector('.items');
+    let id = event.target.dataset.id;
+    const articulo = productList.find(product => product.id === Number(id))
+    let añadido = document.querySelector(`.items li[data-id="${articulo.id}"]`);
+    const icono = document.querySelector('#cart')
+
+    if (añadido) {
+        const span = añadido.querySelector('span');
+        const btn = document.querySelector(`#btnAdd${articulo.id}`)
+        const btn1 = añadido.querySelector(`#add${articulo.id}`)
+        addX1(span, articulo.stock, btn, btn1)
+
+    } else {
+        printInCart(articulo, carro);
+        destacarCart(icono)
+
+    }
+    mostrarTotal();
+
+
+}
 
 // Pintar productos en el Screen.
 function printOneArticle(articulo, dom) {
@@ -29,6 +51,8 @@ function printOneArticle(articulo, dom) {
     figure.appendChild(img);
     article.append(figure, h3, ul, btn);
     dom.appendChild(article);
+
+    btn.addEventListener('click', addToCart)
 }
 
 
@@ -39,8 +63,7 @@ function printAllStock(stockList, dom) {
 }
 
 // Termina seccion de pintar productos
-
-console.log(printAllStock(productList, productSection));
+printAllStock(productList, productSection)
 
 //Buscar productos en el input de busqueda
 
@@ -56,10 +79,10 @@ function searchProducts(term, stockList, dom) {
     dom.innerHTML = '';
     printAllStock(filteredProducts, dom);
 
-    btnAdd = document.querySelectorAll('article button');
+    /* btnAdd = document.querySelectorAll('article button');
     btnAdd.forEach(button => {
         button.addEventListener('click', addToCart);
-    });
+    }); */
 }
 searchInput.addEventListener('input', () => {
     const searchTerm = searchInput.value;
@@ -92,6 +115,8 @@ function showPage(page, stockList) {
     productSection.innerHTML = '';
     printAllStock(productsToShow, productSection);
     pageInfo.textContent = `Página ${currentPage} de ${Math.ceil(stockList.length / itemsPerPage)}`;
+
+    
 }
 
 // Botón "Anterior"
@@ -195,8 +220,6 @@ const addX1 = (span, stock, btn, btn1) => {
 }
 
 const deleteInCart = (event) => {
-    /* liBorrar = event.target.parentNode;
-    liBorrar.parentNode.removeChild(liBorrar) */
 
     let liBorrar = event.target.parentNode;
 
@@ -249,30 +272,9 @@ const destacarCart = (icono) => {
 
 
 
-const addToCart = (event) => {
-    const carro = document.querySelector('.items');
-    let id = event.target.dataset.id;
-    const articulo = productList.find(product => product.id === Number(id))
-    let añadido = document.querySelector(`.items li[data-id="${articulo.id}"]`);
-    const icono = document.querySelector('#cart')
-
-    if (añadido) {
-        const span = añadido.querySelector('span');
-        const btn = document.querySelector(`#btnAdd${articulo.id}`)
-        const btn1 = añadido.querySelector(`#add${articulo.id}`)
-        addX1(span, articulo.stock, btn, btn1)
-
-    } else {
-        printInCart(articulo, carro);
-        destacarCart(icono)
-
-    }
-    mostrarTotal();
 
 
-}
-
-btnAdd.forEach(button => {
+/* btnAdd.forEach(button => {
     button.addEventListener('click', addToCart);
-})
+}) */
 
