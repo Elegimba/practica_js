@@ -143,10 +143,13 @@ const botonCarrito = document.querySelector('#cart')
 
 const desplegarCarro = () => {
     const carro = document.querySelector('.carro');
-    if (carro.style.transform === "translateX(100%)") {
-        carro.setAttribute('style', 'transform: translateX(0)')
+
+    /* carro.style.transform = 'translateX(-100%)' */
+    /* carroBtn.setAttribute('style', 'transform: translateX(-800%)') */
+    if (carro.style.transform === "") {
+        carro.setAttribute('style', 'transform: translateX(-0%)')
     } else {
-        carro.style.transform = "translateX(100%)"
+        carro.style.transform = ""
     }
 }
 botonCarrito.addEventListener('click', desplegarCarro)
